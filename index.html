@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XKUMPAU ANGLERS | Tempahan Bot</title>
+    <title>XKUMPAU ANGLERS | Tuaran</title>
     <style>
         :root { --primary: #003049; --accent: #f77f00; --green: #25D366; }
         body { font-family: 'Poppins', sans-serif; margin: 0; background: #fdf0d5; color: #333; }
-        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; padding: 30px 20px; text-align: center; }
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; padding: 30px 20px; text-align: center; color: white; }
         .container { max-width: 700px; margin: -20px auto 40px; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         
-        /* GAYA KOTAK PILIHAN BOT */
-        .bot-selection { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 20px; }
-        .bot-option { border: 2px solid #eee; border-radius: 15px; padding: 15px; text-align: center; cursor: pointer; transition: 0.3s; position: relative; }
+        /* KOTAK PILIHAN BOT - KLIK SINI TERUS */
+        .bot-selection { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 25px; }
+        .bot-option { border: 2px solid #eee; border-radius: 15px; padding: 15px; text-align: center; cursor: pointer; transition: 0.3s; position: relative; display: block; }
         .bot-option:hover { border-color: var(--accent); background: #fffcf9; }
         
-        .bot-option input[type="radio"] { position: absolute; opacity: 0; }
-        .bot-option:has(input[type="radio"]:checked) { border-color: var(--accent); background: #fff4e6; box-shadow: 0 5px 15px rgba(247, 127, 0, 0.2); }
+        /* Sembunyikan radio button asal, guna kotak sebagai ganti */
+        .bot-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+        .bot-option:has(input[type="radio"]:checked) { border-color: var(--accent); background: #fff4e6; box-shadow: 0 0 10px rgba(247,127,0,0.3); }
 
-        .bot-title { font-weight: bold; font-size: 18px; display: block; }
+        .bot-title { font-weight: bold; font-size: 18px; display: block; color: var(--primary); }
         .bot-price { color: var(--accent); font-weight: bold; font-size: 20px; display: block; margin: 5px 0; }
-        .bot-suitability { font-size: 11px; color: #666; font-style: italic; display: block; line-height: 1.3; }
+        .bot-suit { font-size: 11px; color: #d62828; font-weight: bold; display: block; margin-top: 5px; }
 
-        .section-title { font-weight: bold; margin: 20px 0 10px; color: var(--primary); border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; text-transform: uppercase; font-size: 14px; }
+        .section-title { font-weight: bold; margin: 20px 0 10px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 5px; font-size: 14px; text-transform: uppercase; }
         
         form { display: grid; gap: 12px; }
-        label { font-weight: bold; font-size: 13px; margin-bottom: 2px; display: block; }
-        input, select, textarea { padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 15px; width: 100%; box-sizing: border-box; }
+        label { font-weight: bold; font-size: 13px; margin-bottom: 2px; }
+        input, select, textarea { padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 15px; width: 100%; box-sizing: border-box; }
         
         .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        button { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        
+        button { background: var(--accent); color: white; border: none; padding: 18px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px; }
         .wa-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
         .wa-btn { color: white; text-decoration: none; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 12px; }
     </style>
@@ -39,40 +39,35 @@
 
 <header>
     <h1>⚓ XKUMPAU ANGLERS</h1>
-    <p>Muara Gayang, Tuaran</p>
+    <p>Muara Gayang, Tuaran | Klik Kotak Bot Untuk Tempah</p>
 </header>
 
 <div class="container">
     <form action="https://formspree.io/f/xdayqpde" method="POST">
-        <div class="section-title">1. Pilih Bot (Klik Kotak)</div>
+        
+        <div class="section-title">1. Pilih Bot (Klik Kotak Di Bawah)</div>
         <div class="bot-selection">
             <label class="bot-option">
-                <input type="radio" name="Pilihan_Bot" value="12ft (RM100)" required>
-                <div class="bot-content">
-                    <span class="bot-title">12' (5HP)</span>
-                    <span class="bot-price">RM100</span>
-                    <span class="bot-suitability">Casting Muara (2-3 Pax)</span>
-                </div>
+                <input type="radio" name="Bot_Pilihan" value="12ft_5HP" required>
+                <span class="bot-title">12' (5HP)</span>
+                <span class="bot-price">RM100</span>
+                <span class="bot-suit">SESUAI: Casting Muara (2-3 Orang)</span>
             </label>
             <label class="bot-option">
-                <input type="radio" name="Pilihan_Bot" value="16ft (RM130)">
-                <div class="bot-content">
-                    <span class="bot-title">16' (9.8HP)</span>
-                    <span class="bot-price">RM130</span>
-                    <span class="bot-suitability">Group MJ & Siakap (Stabil)</span>
-                </div>
+                <input type="radio" name="Bot_Pilihan" value="16ft_9.8HP">
+                <span class="bot-title">16' (9.8HP)</span>
+                <span class="bot-price">RM130</span>
+                <span class="bot-suit">SESUAI: MJ & Siakap (Group Stabil)</span>
             </label>
             <label class="bot-option">
-                <input type="radio" name="Pilihan_Bot" value="21ft (RM160)">
-                <div class="bot-content">
-                    <span class="bot-title">21' (15HP)</span>
-                    <span class="bot-price">RM160</span>
-                    <span class="bot-suitability">Trip Jauh & Family (Selesa)</span>
-                </div>
+                <input type="radio" name="Bot_Pilihan" value="21ft_15HP">
+                <span class="bot-title">21' (15HP)</span>
+                <span class="bot-price">RM160</span>
+                <span class="bot-suit">SESUAI: Trip Jauh & Family (Selesa)</span>
             </label>
         </div>
 
-        <div class="section-title">2. Info Trip & Tekong</div>
+        <div class="section-title">2. Maklumat Pelanggan</div>
         <div class="row">
             <div>
                 <label>Nama Penuh:</label>
@@ -83,28 +78,21 @@
                 <input type="date" name="Tarikh" required>
             </div>
         </div>
-        <div>
-            <label>Khidmat Tekong? (RM50):</label>
-            <select name="Tekong">
-                <option value="Tiada">Pandu Sendiri</option>
-                <option value="Ya">Tambah Tekong (+RM50)</option>
-            </select>
-        </div>
 
-        <div class="section-title">3. Pesanan Umpan</div>
+        <div class="section-title">3. Pilihan Umpan & Tekong</div>
         <div class="row">
             <div>
-                <label>Udang Hidup (Saiz):</label>
+                <label>Saiz Udang Hidup:</label>
                 <select name="Saiz_Udang">
-                    <option value="Tiada">Tiada</option>
-                    <option value="30sen">30sen</option>
-                    <option value="50sen">50sen</option>
-                    <option value="80sen">80sen</option>
-                    <option value="RM1">RM1</option>
+                    <option value="Tiada">Tiada Udang</option>
+                    <option value="30sen">Saiz 30sen</option>
+                    <option value="50sen">Saiz 50sen</option>
+                    <option value="80sen">Saiz 80sen</option>
+                    <option value="RM1">Saiz RM1</option>
                 </select>
             </div>
             <div>
-                <label>Bilangan (Pcs):</label>
+                <label>Bilangan Udang (Pcs):</label>
                 <input type="number" name="Qty_Udang" placeholder="Cth: 50">
             </div>
         </div>
@@ -116,12 +104,20 @@
             </div>
             <div>
                 <label>Umpan Mati (RM5/pack):</label>
-                <input type="number" name="Qty_Umpan_Mati" placeholder="Berapa pack?">
+                <input type="number" name="Qty_Mati" placeholder="Berapa pack?">
             </div>
         </div>
 
-        <label>Nota / Target Ikan:</label>
-        <textarea name="Nota" rows="2" placeholder="Cth: Perlukan ais 1 tong. Target Siakap."></textarea>
+        <div>
+            <label>Khidmat Tekong? (RM50):</label>
+            <select name="Tekong">
+                <option value="Tiada">Pandu Sendiri</option>
+                <option value="Ya">Tambah Tekong (+RM50)</option>
+            </select>
+        </div>
+
+        <label>Nota Tambahan (Cth: Target Ikan):</label>
+        <textarea name="Nota" rows="2" placeholder="Cth: Target Siakap. Standby ais."></textarea>
 
         <button type="submit">HANTAR TEMPAHAN</button>
     </form>
