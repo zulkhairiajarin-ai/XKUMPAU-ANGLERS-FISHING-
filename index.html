@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Bot Padu | Tempahan Online</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #e9f5f9; }
+        header { background: #0077b6; color: white; padding: 30px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .container { max-width: 600px; margin: 30px auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h2 { color: #0077b6; border-bottom: 2px solid #0077b6; padding-bottom: 10px; }
+        form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .input-group { display: flex; flex-direction: column; }
+        label { font-weight: bold; margin-bottom: 5px; color: #333; }
+        input, select { padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 16px; }
+        button { background: #ff9f1c; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #e08e19; transform: translateY(-2px); }
+        footer { text-align: center; padding: 20px; color: #777; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TEMPAHAN BOT SEWA</h1>
+    <p>Mudah. Cepat. Terus ke Email Owner!</p>
+</header>
+
+<div class="container">
+    <h2>Borang Tempahan</h2>
+    
+    <form action="https://formspree.io/f/xdayqpde" method="POST">
+        
+        <div class="input-group">
+            <label>Nama Penuh:</label>
+            <input type="text" name="Nama" placeholder="Contoh: Ali Bin Abu" required>
+        </div>
+
+        <div class="input-group">
+            <label>No. Telefon (WhatsApp):</label>
+            <input type="tel" name="Phone" placeholder="0123456789" required>
+        </div>
+
+        <div class="input-group">
+            <label>Tarikh Sewa:</label>
+            <input type="date" name="Tarikh" required>
+        </div>
+
+        <div class="input-group">
+            <label>Jenis Bot:</label>
+            <select name="Jenis_Bot">
+                <option value="Speedboat">Speedboat (RM500/hari)</option>
+                <option value="Bot Mancing">Bot Mancing (RM300/hari)</option>
+                <option value="Bot Mewah">Bot Mewah (RM1500/hari)</option>
+            </select>
+        </div>
+
+        <button type="submit">Hantar Tempahan Sekarang</button>
+    </form>
+</div>
+
+<footer>
+    &copy; 2024 Bisnes Bot Kita. All Rights Reserved.
+</footer>
+
+</body>
+</html>
