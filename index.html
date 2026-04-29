@@ -3,74 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XKUMPAU ANGLERS FISHING GROUP</title>
+    <title>XKUMPAU ANGLERS | Tempahan Bot</title>
     <style>
-        :root { --primary: #003049; --accent: #f77f00; --green: #25D366; --dark-green: #128C7E; }
+        :root { --primary: #003049; --accent: #f77f00; --green: #25D366; }
         body { font-family: 'Poppins', sans-serif; margin: 0; background: #fdf0d5; color: #333; }
-        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; padding: 40px 20px; text-align: center; }
-        .container { max-width: 900px; margin: -20px auto 40px; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .grid-bot { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 20px; }
-        .bot-card { border: 1px solid #ddd; border-radius: 10px; padding: 10px; text-align: center; background: #f9f9f9; }
-        .info-box { background: #e9ecef; padding: 15px; border-radius: 15px; margin-bottom: 20px; font-size: 14px; }
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; padding: 30px 20px; text-align: center; }
+        .container { max-width: 700px; margin: -20px auto 40px; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        /* GAYA KOTAK PILIHAN BOT */
+        .bot-selection { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 20px; }
+        .bot-option { border: 2px solid #eee; border-radius: 15px; padding: 15px; text-align: center; cursor: pointer; transition: 0.3s; position: relative; }
+        .bot-option:hover { border-color: var(--accent); background: #fffcf9; }
+        
+        .bot-option input[type="radio"] { position: absolute; opacity: 0; }
+        .bot-option:has(input[type="radio"]:checked) { border-color: var(--accent); background: #fff4e6; box-shadow: 0 5px 15px rgba(247, 127, 0, 0.2); }
+
+        .bot-title { font-weight: bold; font-size: 18px; display: block; }
+        .bot-price { color: var(--accent); font-weight: bold; font-size: 20px; display: block; margin: 5px 0; }
+        .bot-suitability { font-size: 11px; color: #666; font-style: italic; display: block; line-height: 1.3; }
+
+        .section-title { font-weight: bold; margin: 20px 0 10px; color: var(--primary); border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; text-transform: uppercase; font-size: 14px; }
+        
         form { display: grid; gap: 12px; }
-        label { font-weight: bold; font-size: 14px; color: var(--primary); }
-        input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; width: 100%; box-sizing: border-box; }
-        .btn-submit { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        label { font-weight: bold; font-size: 13px; margin-bottom: 2px; display: block; }
+        input, select, textarea { padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 15px; width: 100%; box-sizing: border-box; }
+        
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        button { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        
         .wa-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .whatsapp-btn { color: white; text-decoration: none; display: block; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 13px; }
-        .wa-admin { background: var(--green); }
-        .wa-tekong { background: var(--dark-green); }
+        .wa-btn { color: white; text-decoration: none; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>⚓ XKUMPAU ANGLERS FISHING GROUP</h1>
-    <p>Muara Gayang, Tuaran | Target: Siakap, MJ & GT</p>
+    <h1>⚓ XKUMPAU ANGLERS</h1>
+    <p>Muara Gayang, Tuaran</p>
 </header>
 
 <div class="container">
-    <div class="grid-bot">
-        <div class="bot-card"><h3>12' (5HP)</h3><b style="color:var(--accent)">RM100</b></div>
-        <div class="bot-card"><h3>16' (9.8HP)</h3><b style="color:var(--accent)">RM130</b></div>
-        <div class="bot-card"><h3>21' (15HP)</h3><b style="color:var(--accent)">RM160</b></div>
-    </div>
-
     <form action="https://formspree.io/f/xdayqpde" method="POST">
-        <label>Nama Penuh:</label>
-        <input type="text" name="Nama" required>
+        <div class="section-title">1. Pilih Bot (Klik Kotak)</div>
+        <div class="bot-selection">
+            <label class="bot-option">
+                <input type="radio" name="Pilihan_Bot" value="12ft (RM100)" required>
+                <div class="bot-content">
+                    <span class="bot-title">12' (5HP)</span>
+                    <span class="bot-price">RM100</span>
+                    <span class="bot-suitability">Casting Muara (2-3 Pax)</span>
+                </div>
+            </label>
+            <label class="bot-option">
+                <input type="radio" name="Pilihan_Bot" value="16ft (RM130)">
+                <div class="bot-content">
+                    <span class="bot-title">16' (9.8HP)</span>
+                    <span class="bot-price">RM130</span>
+                    <span class="bot-suitability">Group MJ & Siakap (Stabil)</span>
+                </div>
+            </label>
+            <label class="bot-option">
+                <input type="radio" name="Pilihan_Bot" value="21ft (RM160)">
+                <div class="bot-content">
+                    <span class="bot-title">21' (15HP)</span>
+                    <span class="bot-price">RM160</span>
+                    <span class="bot-suitability">Trip Jauh & Family (Selesa)</span>
+                </div>
+            </label>
+        </div>
 
-        <label>Pilihan Bot:</label>
-        <select name="Pilihan_Bot">
-            <option value="12ft">12 Kaki (RM100)</option>
-            <option value="16ft">16 Kaki (RM130)</option>
-            <option value="21ft">21 Kaki (RM160)</option>
-        </select>
+        <div class="section-title">2. Info Trip & Tekong</div>
+        <div class="row">
+            <div>
+                <label>Nama Penuh:</label>
+                <input type="text" name="Nama" placeholder="Nama anda" required>
+            </div>
+            <div>
+                <label>Tarikh Trip:</label>
+                <input type="date" name="Tarikh" required>
+            </div>
+        </div>
+        <div>
+            <label>Khidmat Tekong? (RM50):</label>
+            <select name="Tekong">
+                <option value="Tiada">Pandu Sendiri</option>
+                <option value="Ya">Tambah Tekong (+RM50)</option>
+            </select>
+        </div>
 
-        <label>Saiz Udang Hidup:</label>
-        <select name="Saiz_Udang">
-            <option value="Tiada">Tiada Udang</option>
-            <option value="30sen">Saiz 30sen</option>
-            <option value="50sen">Saiz 50sen</option>
-            <option value="80sen">Saiz 80sen</option>
-            <option value="RM1">Saiz RM1</option>
-        </select>
+        <div class="section-title">3. Pesanan Umpan</div>
+        <div class="row">
+            <div>
+                <label>Udang Hidup (Saiz):</label>
+                <select name="Saiz_Udang">
+                    <option value="Tiada">Tiada</option>
+                    <option value="30sen">30sen</option>
+                    <option value="50sen">50sen</option>
+                    <option value="80sen">80sen</option>
+                    <option value="RM1">RM1</option>
+                </select>
+            </div>
+            <div>
+                <label>Bilangan (Pcs):</label>
+                <input type="number" name="Qty_Udang" placeholder="Cth: 50">
+            </div>
+        </div>
 
-        <label>Bilangan Udang (Berapa Pcs):</label>
-        <input type="number" name="Kuantiti_Udang" placeholder="Contoh: 50">
+        <div class="row">
+            <div>
+                <label>Belanak (RM2/ekor):</label>
+                <input type="number" name="Qty_Belanak" placeholder="Berapa ekor?">
+            </div>
+            <div>
+                <label>Umpan Mati (RM5/pack):</label>
+                <input type="number" name="Qty_Umpan_Mati" placeholder="Berapa pack?">
+            </div>
+        </div>
 
-        <label>Umpan Belanak (RM2/ekor):</label>
-        <input type="number" name="Kuantiti_Belanak" placeholder="Berapa ekor?">
+        <label>Nota / Target Ikan:</label>
+        <textarea name="Nota" rows="2" placeholder="Cth: Perlukan ais 1 tong. Target Siakap."></textarea>
 
-        <label>Nota Tambahan (Cth: Tarikh/Tekong/Umpan Mati):</label>
-        <textarea name="Nota" rows="2" placeholder="Cth: Nak tekong (+RM50). Tarikh 12/5."></textarea>
-
-        <button type="submit" class="btn-submit">HANTAR BOOKING</button>
+        <button type="submit">HANTAR TEMPAHAN</button>
     </form>
 
     <div class="wa-container">
-        <a href="https://wa.me/60139365654" target="_blank" class="whatsapp-btn wa-admin">💬 ADMIN (BOOKING)</a>
-        <a href="https://wa.me/60168445548" target="_blank" class="whatsapp-btn wa-tekong">🎣 TEKONG (TEKNIKAL)</a>
+        <a href="https://wa.me/60139365654" class="wa-btn" style="background:#25D366">💬 ADMIN (BOOKING)</a>
+        <a href="https://wa.me/60168445548" class="wa-btn" style="background:#128C7E">🎣 TEKONG (TEKNIKAL)</a>
     </div>
 </div>
 
