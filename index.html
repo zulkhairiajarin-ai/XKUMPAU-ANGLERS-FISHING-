@@ -5,74 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XKUMPAU ANGLERS FISHING GROUP</title>
     <style>
-        :root { --primary: #003049; --accent: #f77f00; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fdf0d5; color: #333; }
-        
-        /* GAMBAR BARU - BOT MANCING */
+        :root { --primary: #003049; --accent: #f77f00; --green: #25D366; --blue: #0077b6; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fdf0d5; color: #333; line-height: 1.6; }
         header { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80');
             background-size: cover; background-position: center;
-            color: white; padding: 80px 20px; text-align: center;
+            color: white; padding: 60px 20px; text-align: center;
         }
-
-        .container { max-width: 900px; margin: -40px auto 40px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .grid-bot { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .bot-card { border: 2px solid #eee; border-radius: 15px; padding: 20px; text-align: center; background: #fff; }
-        .bot-tag { background: #0077b6; color: white; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; }
-        
-        form { display: grid; gap: 15px; margin-top: 20px; }
+        .container { max-width: 900px; margin: -30px auto 40px; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .grid-bot { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 25px; }
+        .bot-card { border: 2px solid #eee; border-radius: 15px; padding: 15px; text-align: center; background: #f9f9f9; }
+        .price { font-size: 24px; font-weight: bold; color: var(--accent); display: block; margin: 5px 0; }
+        .info-box { background: #e9ecef; padding: 15px; border-radius: 15px; margin-bottom: 25px; }
+        .umpan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; font-size: 14px; }
+        form { display: grid; gap: 15px; }
+        label { font-weight: bold; font-size: 14px; color: var(--primary); }
         input, select, textarea { padding: 12px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; width: 100%; box-sizing: border-box; }
-        button { background: var(--accent); color: white; border: none; padding: 18px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; }
-        .whatsapp-btn { background: #25D366; color: white; text-decoration: none; display: block; text-align: center; padding: 15px; border-radius: 10px; margin-top: 10px; font-weight: bold; }
+        .btn-submit { background: var(--accent); color: white; border: none; padding: 18px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; }
+        .whatsapp-btn { background: var(--green); color: white; text-decoration: none; display: block; text-align: center; padding: 15px; border-radius: 10px; margin-top: 10px; font-weight: bold; }
+        .maps-btn { background: var(--blue); color: white; text-decoration: none; display: block; text-align: center; padding: 12px; border-radius: 10px; margin-bottom: 20px; font-weight: bold; font-size: 14px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>⚓ XKUMPAU ANGLERS FISHING GROUP</h1>
-    <p>Muara Gayang, Tuaran - Target: Siakap, MJ & GT!</p>
+    <p>Muara Gayang, Tuaran | Lubuk Siakap, MJ & GT</p>
 </header>
 
 <div class="container">
+    <a href="https://maps.google.com/?q=5.163074,116.142514" target="_blank" class="maps-btn">📍 BUKA LOKASI JETI (GOOGLE MAPS)</a>
+
     <div class="grid-bot">
         <div class="bot-card">
-            <span class="bot-tag">Enjin 5HP</span>
-            <h3>Bot 12 Kaki</h3>
-            <p>Casting Muara</p>
+            <h3>Bot 12 Kaki (5HP)</h3>
+            <span class="price">RM100</span>
+            <p>Sesuai untuk Casting Muara</p>
         </div>
         <div class="bot-card">
-            <span class="bot-tag">Enjin 9.8HP</span>
-            <h3>Bot 16 Kaki</h3>
-            <p>Stabil & Luas</p>
+            <h3>Bot 16 Kaki (9.8HP)</h3>
+            <span class="price">RM130</span>
+            <p>Stabil & Luas (Group Kecil)</p>
         </div>
         <div class="bot-card">
-            <span class="bot-tag">Enjin 15HP</span>
-            <h3>Bot 21 Kaki</h3>
-            <p>Trip Jauh / Family</p>
+            <h3>Bot 21 Kaki (15HP)</h3>
+            <span class="price">RM160</span>
+            <p>Paling Selesa & Padu</p>
         </div>
     </div>
 
-    <hr style="border:0; height:1px; background:#eee;">
-    
-    <h2 style="text-align:center; color: var(--primary);">Borang Tempahan</h2>
+    <div class="info-box">
+        <h3 style="margin-top:0; color:var(--primary);">🔥 Servis Tambahan & Umpan</h3>
+        <div class="umpan-grid">
+            <div>✅ <b>Sewa Tekong:</b> RM50</div>
+            <div>✅ <b>Udang Hidup:</b> 30¢ / 50¢ / 80¢ / RM1</div>
+            <div>✅ <b>Belanak Hidup:</b> RM2 / ekor</div>
+            <div>✅ <b>Umpan Mati:</b> RM5 / pack</div>
+        </div>
+    </div>
+
     <form action="https://formspree.io/f/xdayqpde" method="POST">
-        <input type="text" name="Nama" placeholder="Nama Penuh" required>
-        <input type="tel" name="WhatsApp" placeholder="No. WhatsApp" required>
+        <label>Nama Penuh:</label>
+        <input type="text" name="Nama" placeholder="Nama anda" required>
+
+        <label>No. WhatsApp:</label>
+        <input type="tel" name="WhatsApp" placeholder="Contoh: 01XXXXXXXX" required>
+
+        <label>Tarikh Trip:</label>
         <input type="date" name="Tarikh" required>
-        
+
+        <label>Pilihan Bot:</label>
         <select name="Pilihan_Bot" required>
-            <option value="" disabled selected>Pilih Saiz Bot</option>
-            <option value="5HP_12Kaki">Bot 12 Kaki (5HP)</option>
-            <option value="9.8HP_16Kaki">Bot 16 Kaki (9.8HP)</option>
-            <option value="15HP_21Kaki">Bot 21 Kaki (15HP)</option>
+            <option value="Bot_12ft">Bot 12 Kaki (RM100)</option>
+            <option value="Bot_16ft">Bot 16 Kaki (RM130)</option>
+            <option value="Bot_21ft">Bot 21 Kaki (RM160)</option>
         </select>
 
-        <textarea name="Pesanan" rows="3" placeholder="Target: Siakap/MJ/GT. Ais/Umpan?"></textarea>
-        <button type="submit">HANTAR BOOKING</button>
-        <a href="https://wa.me/601XXXXXXXX" class="whatsapp-btn">HUBUNGI WHATSAPP</a>
+        <label>Khidmat Tekong? (RM50)</label>
+        <select name="Servis_Tekong">
+            <option value="Sewa_Bot_Sahaja">Sewa Bot Sahaja</option>
+            <option value="Tambah_Tekong">Tambah Tekong (+RM50)</option>
+        </select>
+
+        <label>Pesanan Umpan / Nota Tambahan:</label>
+        <textarea name="Umpan_Nota" rows="3" placeholder="Contoh: Udang hidup 50 ekor (saiz 50sen), belanak 5 ekor."></textarea>
+
+        <button type="submit" class="btn-submit">HANTAR TEMPAHAN</button>
+        <a href="https://wa.me/601126131435" target="_blank" class="whatsapp-btn">HUBUNGI WHATSAPP OWNER</a>
     </form>
 </div>
+
+<footer style="text-align:center; padding: 20px; color: #777; font-size: 14px;">
+    &copy; 2026 XKUMPAU ANGLERS - Muara Gayang, Tuaran, Sabah.
+</footer>
 
 </body>
 </html>
